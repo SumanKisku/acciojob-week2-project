@@ -1,5 +1,6 @@
 :root {
     --side-padding: 20px;
+    --base-font-size: 24px;
 }
 * {
     box-sizing: border-box;
@@ -13,6 +14,7 @@ body {
 
 h1, h2 {
     font-weight: 400;
+    font-size: calc(var(--base-font-size) * 2.5);
 }
 
 img {
@@ -23,7 +25,6 @@ img {
 header {
     position: sticky;
     top: 0;
-    border: 1px solid red;
 }
 
 nav {
@@ -36,7 +37,6 @@ nav {
 }
 
 nav .logo {
-    border: 1px solid red;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -46,7 +46,7 @@ nav .logo {
 nav .logo a {
     color: #fff;
     text-decoration: none;
-    font-size: 24px;
+    font-size: var(--base-font-size);
 }
 
 nav .logo a:hover {
@@ -55,9 +55,9 @@ nav .logo a:hover {
 
 nav ul {
     list-style-type: none;
-    border: 1px solid red;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +73,51 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+#top-two-col {
+    display: flex;
+    justify-content: center;
+    padding: var(--side-padding);
+}
+
+.col {
+    width: 50%;
+}
+
+.col p {
+    padding: 10px 10px 10px 0;
+    font-size: calc(var(--base-font-size)/ 1.5);
+}
+
+.col .cta {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    transition: all 0.250s;
+}
+
+.col .cta:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#flex-images {
+    padding: var(--side-padding);
+}
+
+.grid {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.grid img {
+    height: 450px;
+    object-fit: cover;
+}
+
 @media screen and (min-width: 639px) {
     nav {
         flex-direction: row;
@@ -83,5 +128,6 @@ nav ul li a:hover {
     }
     nav ul {
         flex-direction: row;
+        margin-bottom: 0;
     }
 }
